@@ -1,0 +1,91 @@
+.home {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/591/300/904/mountains-minimalism-forest-firewatch-wallpaper-preview.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 520px;
+    position: relative;
+    z-index: -2;
+}
+
+.home-abs {
+    /* background-color: #1a1919; */
+    /* opacity: 0.7; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 672px;
+    z-index: 2; /* Increase z-index to ensure it's below text */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3; /* Increase z-index to ensure it's above background color */
+    align-items: center;
+}
+
+.wrapper .static-txt {
+    font-size: 30px;
+    margin-top: 10px; 
+    color: #fbf7f7;
+    font-weight: 400;
+    position: relative;
+    z-index: 1; /* Ensure it's above background color */
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 0;
+    line-height: 90px;
+    height: 90px;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Ensure it's above background color */
+}
+
+.dynamic-txts li {
+    list-style: none;
+    font-size: 50px;
+    font-weight: 500;
+    color: #890707;
+    animation: slide 6s steps(4) infinite;
+    position: relative;
+    top: 0;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(1, 7, 47);
+    left: 0;
+    top: 2px;
+    border-left: 2px solid rgb(145, 33, 33);
+    animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 115%;
+    }
+}
